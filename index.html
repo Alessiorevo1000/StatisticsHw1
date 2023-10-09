@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <title>Shapes</title>
+</head>
+
 <body>
+    <canvas id="myCanvas" width="650"  height="200" style="border: 3px solid blue "></canvas>
 
-<canvas id="myCanvas" width="0" height="0" style="border:1px solid grey"></canvas>
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
 
-<script>
-const c = document.getElementById("myCanvas");
-const ctx = c.getContext("2d");
-ctx.beginPath();
 
-ctx.stroke();
-</script> 
+        // circle
+        ctx.beginPath();
+        ctx.arc(260, 85, 60, 0, 2 * Math.PI);
+        ctx.fillStyle = 'purple';
+        ctx.fill();
+        ctx.closePath();
 
+        // rectangle
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(370, 60, 100, 50);
+
+        //  point
+        ctx.fillStyle = 'black';
+        ctx.fillRect(550, 80, 5, 5);
+
+
+        //  line
+        ctx.beginPath();
+        ctx.moveTo(50, 100);
+        ctx.lineTo(150, 100);
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+    </script>
 </body>
+
 </html>
